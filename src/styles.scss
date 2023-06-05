@@ -1,1 +1,134 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto, Arial;
+    font-size: 16px;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(122, 15, 223);
+    color: rgb(233, 230, 81);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    input{
+        width: 300px;
+        height: 40px;
+        text-align: center;
+        font-size: 17px;
+        border-radius: 14px;
+        border: none;
+        box-shadow: 6px 6px   6px rgba(0, 0, 0, 0.237);
+        background-color: rgb(201, 125, 245);
+        color: rgb(85, 85, 85);
+        
+    }
+    input:focus{
+        outline: none;
+        background-color: rgb(204, 152, 235);
+    }
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 500px;
+    border-radius: 18px;
+}
+
+.upper-section {
+    width: 100%;
+    background-color: rgb(130, 46, 209);
+    border-radius: 14px 14px 6px 6px;
+    height: 50%;
+    margin-bottom: 3px;
+    position: relative;
+    box-shadow: 10px 0px   10px rgba(0, 0, 0, 0.437);
+    img {
+        width: 100%;
+        position: absolute;
+        object-fit: fill;
+        height: 100%;
+        border-radius: 14px 14px 6px 6px;
+        
+    }
+    .weather-data{
+        position: relative;
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(95, 95, 95, 0.211);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 14px 14px 6px 6px;
+    }
+    .location{
+        font-size: 1.2em;
+        color: rgb(85, 85, 85);
+        text-align: center;
+    }
+    .temperature{
+        color: rgba(85, 85, 85);
+        font-size: 4em;
+        text-align: center;
+        font-weight: 400;
+    }
+}
+
+.lower-section {
+    flex: 1;
+    background-color: rgb(130, 46, 209);
+    border-radius: 6px 6px 14px 14px;
+    box-shadow: 10px 10px   10px rgba(0, 0, 0, 0.437);
+    text-align: center;
+    display: flex;
+        flex-direction: column;
+        p{
+            margin: 10px;
+        }
+        
+    
+    .data{
+        background-color: rgb(106, 0, 206);
+        flex: 1;
+        margin: 10px;
+        margin-top: 5px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .info-block{
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            justify-content:space-evenly;
+        }
+        .info-label{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+        img{
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
