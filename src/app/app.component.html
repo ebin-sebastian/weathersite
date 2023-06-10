@@ -5,15 +5,18 @@
   rel="stylesheet"
 />
 
-<div class="search"><input type="text" placeholder="Search city" /></div>
+<div class="search">
+  <form #form="ngForm" (submit)="onSubmit()">
+    <input type="text" placeholder="Search city" name="city" [(ngModel)]="city"/>
+  </form></div>
 <div class="container">
   <div class="upper-section">
-    <img src="../assets/hot.jpg" *ngIf="1415" />
-    <img src="../assets/cold.jpg" *ngIf="14 <= 15" />
+    <img src="../assets/hot.jpg" *ngIf="temperature>15" />
+    <img src="../assets/cold.jpg" *ngIf="temperature<=15" />
 
     <div class="weather-data">
-      <div class="location">Willington</div>
-      <div class="temperature">{{ 14.3 | number : "1.0-0" }}</div>
+      <div class="location">{{name}}</div>
+      <div class="temperature">{{temperature}}°c</div>
     </div>
   </div>
   <div class="lower-section">
@@ -25,7 +28,7 @@
           <img src="../assets/high-temperature.png" alt="" />
           <span>High</span>
         </div>
-        <div class="value">10</div>
+        <div class="value">{{temp_max | number:'1.0-0'}}°c</div>
       </div>
 
       <div class="info-block" >
@@ -33,7 +36,7 @@
           <img src="../assets/low-temperature.png" alt="" />
           <span>Low</span>
         </div>
-        <div class="value">10</div>
+        <div class="value">{{temp_min | number:'1.0-0'}}°c</div>
       </div>
 
       <div class="info-block">
@@ -41,7 +44,7 @@
           <img src="../assets/humidity.png" alt="" />
           <span>Humidity</span>
         </div>
-        <div class="value">10</div>
+        <div class="value">{{humidity}} %</div>
         </div>
 
       
@@ -50,7 +53,7 @@
           <img src="../assets/wind.png" alt="" />
           <span>Wind</span>
         </div>
-        <div class="value">10</div>
+        <div class="value">{{wind}} km/h</div>
         </div>
         
       </div>
